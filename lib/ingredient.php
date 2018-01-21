@@ -8,13 +8,6 @@ class Ingredient {
   public $price; // price f the ingredient
   public $unit;
 
-  /*public function __construct($id=0, $name="default", $img="default.jpg", $dsc="default ingredient"){
-    $this->id = $id;
-    $this->$name = $name;
-    $this->$image_name = $img;
-    $this->description = $dsc;
-  }*/
-
   // add any necessary functions to support Ingredients
 
   public static function getIngredientFromRow($row){

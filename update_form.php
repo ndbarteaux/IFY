@@ -30,13 +30,6 @@ include ('inc/nav.php');
         $new_timestamp = $_POST['timestamp'];
         $new_oip = $_POST['originating_ip'];
 
-        /*echo "POST['id'] is set to $new_id!! ";
-        echo "POST['comment'] is set to $new_comment!! ";
-        echo "POST['ing_id'] is set to $new_ingid!! ";
-        echo "POST['user_id'] is set to $new_userid!! ";
-        echo "POST['timestamp'] is set to $new_timestamp!! ";
-        echo "POST['originating_ip'] is set to $new_oip!! ";*/
-
         $comment = new Comment();
         $comment->id = $new_id;
         $comment->ing_id = $new_ingid;
@@ -55,9 +48,6 @@ include ('inc/nav.php');
 
       }else{
         $comment = $db->getCommentDetails($_GET['id']);
-        //echo '#comment [';
-        //print_r($comment);
-        // echo ']'
         ?>
 
         <form class="form-horizontal" method="post">

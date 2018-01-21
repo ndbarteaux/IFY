@@ -18,10 +18,6 @@ function sendEmail($db) {
 	$_SESSION['numItems'] = array();
 	$contents = "";
 	$totalCost = 0;
-	// foreach($items as $key=>$value){
-	// 	$contents .= "\t--" . $key . " for $" . $value . ",\n";
-	// 	$totalCost+=$value;
-	// }
 
 	foreach($items as $key=>$value){
 		foreach($numItems as $numKey=>$numValue){

@@ -19,7 +19,7 @@ include ('inc/header.php');
 		<div class="col-xs-12">
 			<h2>Welcome to Ingredients For You!</h2>
 			<h3>
-			The following are ingedients hosted specifically on our website! <br>
+			The following are ingredients hosted specifically on our website! <br>
 			To find a complete list of ingredients from us and all our associates, please visit our 'Federation Ingredients' page!
 			</h3>
 		</div>
