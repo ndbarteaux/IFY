@@ -5,10 +5,12 @@ function test(){
 function insertIngr(ing, url){
   let imgURL = url + "ajax_ingrimage.php?ing=" + ing;
   $.ajax({url: imgURL,
+    // Adds on success
 		success: function(result){
 			$("#ingrImg").attr("src", "data://jpeg;base64," + result);
       $("#output2").html("success");
 		},
+    // Error on failure
     error: function(){
 			$("#output2").html("Image failed to load");
 		}
@@ -22,6 +24,7 @@ function insertIngr(ing, url){
 	});
 }
 
+  // Adds ingredient to our list 
 function addIngr(data){
   document.getElementById("ingrTitle").innerHTML = data.name;
   document.getElementById("ingrDesc").innerHTML = data.desc;

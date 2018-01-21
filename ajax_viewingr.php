@@ -37,7 +37,6 @@ echo "<script> insertIngr('$displayIngredient', '$displayLink') </script>"
 		Price: <b> $<span id="ingrPrice">[Ingredient Price]</span> / <span id="ingrUnits">[Ingredient Units]</span> </b>
 	</p>
 
-	<!-- <p id="output1"> ... </p> -->
 	<p>Ingredient Data Status: <span id="output1">...</span></p>
 	<p>Ingredient Image Status: <span id="output2">...(images take a couple seconds to load)</span></p>
 </div>
@@ -45,6 +44,7 @@ echo "<script> insertIngr('$displayIngredient', '$displayLink') </script>"
 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
 	<img id="ingrImg" src="" class="img-circle img-responsive" alt="Picture of ingredient" />
 
+	<!-- Making Sure user isn't a Guest -->
 	<?php if($_SESSION["sessionUser"] != 'Guest'){ ?>
 	<br><form action="#" style="text-align:center;" method="post">
 		<input type="submit" name="cart" value="Add To Cart" style = "color: black;">
@@ -53,8 +53,8 @@ echo "<script> insertIngr('$displayIngredient', '$displayLink') </script>"
 	<?php
 		static $cartItems = array();
 		static $numItems = array();
-		// echo '<br><form action="#" style="text-align:center;" method="post"> <input type="submit" name="cart" value="Add To Cart" style = "color: black;"> </form>';
-
+		
+		// Handles adding ingredients to our cart 
 		if(isset($_POST['cart'])) {
 
 			$ingName = $_GET['ing'];
@@ -81,10 +81,6 @@ echo "<script> insertIngr('$displayIngredient', '$displayLink') </script>"
 			$_SESSION['cartItems'] = $cartItems;
 			$_SESSION['numItems'] = $numItems;
 
-			//echo 'numItems: ';
-			//print_r($numItems);
-			//echo 'cartItems: ';
-			//print_r($cartItems);
 			echo '<p><center>[' . $ingName . '] added to the cart with cost of [$' . $ingCost . ']!</center></p>';
 		}
 				?>

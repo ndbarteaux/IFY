@@ -7,6 +7,7 @@ $db = new Database();
 $a = array ();
 $i = 0;
 
+/*  Make json file from list of ingredients */
 $ingredients = $db->getIngredients();
 foreach($ingredients as $ingredient) {
   $toaddName = $ingredient['ingredient_name'];
